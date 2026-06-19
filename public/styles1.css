@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #eceff6;
+}
+
+/* Targeting the element using its ID */
+#navbarSupportedContent {
+    background-color: #05985f; /* Light gray background */
+    padding: 20px;           /* Add padding */
+    border: 1px solid #eff1eb;  /* Light border */
+}
+
+/* Targeting the element using its class */
+.collapse.navbar-collapse {
+    text-align: center;      /* Center-align text */
+    font-family: Arial, sans-serif; /* Set font family */
+}
+
+
+.navbar-brand {
+    font-family: 'Roboto', sans-serif; /* Use a modern, clean font */
+    font-size: 24px; /* Large, bold font size */
+    font-weight: 700; /* Bold font */
+    color: #d20d24; /* Google blue */
+    text-decoration: none; /* Remove underline */
+    letter-spacing: 0.5px; /* Slightly spaced letters */
+    display: inline-block; /* Ensure inline styling */
+    padding: 5px 10px; /* Add spacing around text */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth hover effects */
+}
+
+.navbar-brand:hover {
+    color: #0c7643; /* Google green on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    text-decoration: underline; /* Optional underline on hover */
+}
+
+.btn.btn-outline-success {
+    background-color: transparent; /* Transparent background */
+    border: 2px solid #ffffff; /* White border */
+    color: #ffffff; /* White text color */
+    font-size: 16px; /* Medium font size */
+    padding: 8px 16px; /* Add spacing around the button */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+    cursor: pointer; /* Pointer cursor */
+}
+
+.btn.btn-outline-success:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #28a745; /* Green text color on hover */
+    border-color: #28a745; /* Change border color to match text */
+}
+

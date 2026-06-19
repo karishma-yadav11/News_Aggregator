@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="/login.css">
+</head>
+<body>
+
+<form action="/login" method="post">
+
+    <h2>LogIn</h2>
+    <!-- Username Field (Unique for each user) -->
+    <input type="text" name="username" placeholder="Username" required><br>
+
+    <!-- Password Field -->
+    <input type="password" name="password" placeholder="Password" required><br>
+
+    <!-- Submit Button -->
+    <input type="submit" value="Login">
+
+    <a href="/forgot-password">Forgot Password?</a>
+    <a href="/logout">Log out the page</a>
+
+
+    <a href="/signup">If you are New? Create the new account</a>
+</form>
+
+<!-- Forgot Password Link -->
+{{!-- <a href="/forgot-password">Forgot Password?</a>
+
+
+    <a href="/signup">If you are New? Create the new account</a> --}}
+</body>
+</html>

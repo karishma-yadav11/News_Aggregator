@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" type="text/css" href="/signup.css">
+</head>
+<body>
+    <h2>Signup</h2>
+    <form action="/signup" method="post" id="signupForm">
+        <!-- Name Field -->
+        <input 
+            type="text" 
+            name="name" 
+            placeholder="Enter your name" 
+            pattern="^[a-zA-Z\s]{3,50}$" 
+            title="Name should only contain letters and spaces (3-50 characters)." 
+            required><br>
+
+        <!-- Email Field -->
+        <input 
+            type="text" 
+            name="gmailId" 
+            id="gmailId" 
+            placeholder="Enter your email ID" 
+            required><br>
+        <label>Choose a domain:</label>
+        <select id="emailDomain">
+            <option value="@gmail.com">@gmail.com</option>
+            <option value="@yahoo.com">@yahoo.com</option>
+            <option value="@outlook.com">@outlook.com</option>
+        </select><br>
+
+        <!-- Username Field -->
+        <input 
+            type="text" 
+            name="username" 
+            id="username" 
+            placeholder="Enter a username (or leave empty to use Gmail ID)"
+            pattern="^[a-zA-Z0-9._]{3,20}$"
+            title="Username can include letters, numbers, dots, and underscores (3-20 characters)."><br>
+
+        <!-- Checkbox for using Gmail ID as username -->
+        <label>
+            <input type="checkbox" name="useGmailAsUsername" id="useGmailAsUsername"> Use Gmail ID as Username
+        </label><br>
+
+        <!-- Contact Number Field -->
+        <input 
+            type="text" 
+            name="contactNumber" 
+            placeholder="Enter your contact number" 
+            pattern="^\d{10}$" 
+            title="Please enter a valid 10-digit phone number." 
+            required><br>
+
+            
+
+          <!-- Password Field -->
+        <input 
+            type="password" 
+            name="password" 
+            id="password" 
+             placeholder="Enter your password" 
+            pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&#_\-])[A-Za-z\d@$!%*?&#_\-]{8,}$" 
+            title="Password must be at least 8 characters long, including one uppercase letter, one lowercase letter, one number, and one special character such as @, $, !, %, *, ?, #, _, or -" 
+            required>
+        <input type="checkbox" id="togglePassword"> Show Password<br>
+
+
+        <!-- Confirm Password Field -->
+        <input 
+            type="password" 
+            name="confirmPassword" 
+            id="confirmPassword" 
+            placeholder="Confirm your password" 
+            required>
+        <input type="checkbox" id="toggleConfirmPassword"> Show Confirm Password<br>
+
+        <button type="submit">SignUp</button>
+    </form>
+
+    <script>
+        // Password visibility toggle
+        document.getElementById('togglePassword').addEventListener('change', function () {
+            const passwordField = document.getElementById('password');
+            passwordField.type = this.checked ? 'text' : 'password';
+        });
+
+        document.getElementById('toggleConfirmPassword').addEventListener('change', function () {
+            const confirmPasswordField = document.getElementById('confirmPassword');
+            confirmPasswordField.type = this.checked ? 'text' : 'password';
+        });
+
+        // Auto-fill username with Gmail ID
+        document.getElementById('useGmailAsUsername').addEventListener('change', function () {
+            const usernameField = document.getElementById('username');
+            const emailField = document.getElementById('gmailId');
+            const domainField = document.getElementById('emailDomain');
+            
+            if (this.checked) {
+                usernameField.value = emailField.value + domainField.value;
+            } else {
+                usernameField.value = '';
+            }
+        });
+
+        // Form submission validation
+        document.getElementById('signupForm').addEventListener('submit', function (event) {
+            const emailField = document.getElementById('gmailId');
+            const domainField = document.getElementById('emailDomain');
+            const passwordField = document.getElementById('password');
+            const confirmPasswordField = document.getElementById('confirmPassword');
+
+            // Validate email domain
+            if (!emailField.value) {
+                alert("Please enter a valid email username.");
+                event.preventDefault();
+            } else {
+                emailField.value += domainField.value;
+            }
+
+            // Confirm Password Validation
+            if (passwordField.value !== confirmPasswordField.value) {
+                alert("Passwords do not match.");
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

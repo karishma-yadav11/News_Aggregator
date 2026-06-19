@@ -1,0 +1,25 @@
+/* Style for the logout link */
+.logout-link {
+    background-color: #f44336; /* Red background */
+    color: white;              /* White text */
+    padding: 10px 20px;        /* Some padding for the button */
+    border-radius: 5px;        /* Rounded corners */
+    text-decoration: none;     /* Remove underline */
+    font-weight: bold;         /* Bold text */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+/* Hover effect for the logout button */
+.logout-link:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+    cursor: pointer;            /* Change cursor to pointer */
+}
+
+/* Optional: Style for the logout link in the top corner */
+.logout-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
